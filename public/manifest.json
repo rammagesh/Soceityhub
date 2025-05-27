@@ -1,7 +1,7 @@
 {
   "name": "Society Maintenance App",
-  "short_name": "SocietyApp",
-  "start_url": "/",
+  "short_name": "SocietyHub",
+  "start_url": "/user",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0f172a",
