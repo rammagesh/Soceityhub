@@ -4,7 +4,8 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <Link href="/dashboard">Dashbaord</Link>
+      <h1>user</h1>
+      <Link href="/user/dashboard">Dashbaord</Link>
     </>
   );
 };
