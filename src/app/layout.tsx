@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const farroBold = localFont({
+  src: "/fonts/Farro-Bold.woff",
+  variable: "--font-farro-bold",
+  weight: "700",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const interBold = localFont({
+  src: "/fonts/Inter-Bold.woff",
+  variable: "--font-inter-bold",
+  weight: "700",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="bg-lime text-white text-2xl p-10 bg-red-100 text-xl antialiased">
         {children}
       </body>
     </html>

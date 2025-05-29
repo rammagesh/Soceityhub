@@ -2,7 +2,9 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
       maxWidth: {
@@ -19,11 +21,30 @@ const config: Config = {
       xxl2: '1600px',
       xxxl: '1920px',
     },
-    fontFamily: {
+   fontFamily: {
       farro: ['Farro', 'sans-serif'],
       inter: ['Inter', 'sans-serif'],
-    },
+},
     extend: {
+       fontSize: {
+    'heading-xl': '3rem',
+    'heading-lg': '2.5rem',
+    'heading1': '2.25rem',
+    'heading2': '2rem',
+    'heading3': '1.75rem',
+    'heading4': '1.5rem',
+    'heading5': '1.25rem',
+    'heading6': '1rem',
+    'para': '1rem',
+    'para-lg': '1.125rem',
+    'small': '0.875rem',
+    'x-small': '0.75rem',
+    'xs-small': '0.625rem',
+  },
+  fontFamily: {
+    inter: ['var(--font-inter-bold)', 'sans-serif'],
+    farro: ['var(--font-farro-bold)', 'sans-serif'],
+  },
       colors: {
         emerald: '#10B981',
         mint: '#A7F3D0',
