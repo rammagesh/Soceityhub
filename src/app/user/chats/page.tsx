@@ -17,12 +17,12 @@ const page = () => {
             height={30}
           />
         </Link>
-        <div className="h2">Profiles</div>
+        <div className="h2">Chats</div>
       </div>
       {/* top header END  */}
       {/* page body  */}
       <div className="px-[16px] md:px-[20px] py-[20px] flex flex-col">
-        <div className="h3">Welcome to Profiles pages</div>
+        <div className="h3">Welcome to Chats pages</div>
       </div>
 
       {/* page body END */}
