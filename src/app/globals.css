@@ -1,8 +1,73 @@
 @import "tailwindcss";
 
+@layer base {
+  /* Font farro starts*/
+  @font-face {
+    font-family: "Farro";
+    src:
+      url("/fonts/Farro-Medium.woff2") format("woff2"),
+      url("/fonts/Farro-Medium.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "Farro";
+    src:
+      url("/fonts/Farro-Bold.woff2") format("woff2"),
+      url("/fonts/Farro-Bold.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* Font farro ends*/
+  /* inter starts */
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("/fonts/Inter-Regular.woff2") format("woff2"),
+      url("/fonts/Inter-Regular.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("/fonts/Inter-SemiBold.woff2") format("woff2"),
+      url("/fonts/Inter-SemiBold.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src:
+      url("/fonts/Inter-Bold.woff2") format("woff2"),
+      url("/fonts/Inter-Bold.woff") format("woff");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 700;
+  }
+
+  /* inter ends*/
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #333333;
 }
 
 @theme inline {
@@ -22,5 +87,121 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  @apply font-inter font-normal text-para text-charcoal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+/* CSS reset  */
+a:focus,
+button:focus {
+  @apply outline-[3px] outline-gray-900 outline-offset-0;
+}
+
+/* typograpy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  @apply font-farro font-bold;
+  letter-spacing: -0.02rem;
+}
+
+.h1-xl {
+  @apply text-heading-xl;
+}
+
+.h1-lg {
+  @apply text-heading-lg;
+}
+
+h1,
+.h1 {
+  @apply text-heading2 lg:text-heading1;
+}
+
+h2,
+.h2 {
+  @apply text-heading3 lg:text-heading2;
+}
+
+h3,
+.h3 {
+  @apply text-heading4 lg:text-heading3;
+}
+
+h4,
+.h4 {
+  @apply text-heading5 lg:text-heading4;
+}
+
+h5,
+.h5 {
+  @apply text-heading6 lg:text-heading5;
+}
+
+h6,
+.h6 {
+  @apply text-para-lg lg:text-heading6;
+}
+
+.para-lg {
+  @apply text-para-lg;
+}
+
+p,
+.para {
+  @apply text-para;
+}
+
+.small {
+  @apply text-small;
+}
+
+.x-small {
+  @apply text-x-small;
+}
+
+.xs-small {
+  @apply text-xs-small;
+}
+
+/* typograpy */
