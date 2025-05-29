@@ -86,7 +86,16 @@
     filter: invert(1);
   }
 }
+@supports (-webkit-touch-callout: none) {
+  /* CSS specific to iOS devices */ 
+  .ios-pb-20 {
+    padding-bottom: 20px;
+  }
+}
 
+@supports not (-webkit-touch-callout: none) {
+  /* CSS for other than iOS devices */ 
+}
 body {
   background: var(--background);
   color: var(--foreground);
