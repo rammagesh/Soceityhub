@@ -1,20 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const farroBold = localFont({
-  src: "/fonts/Farro-Bold.woff",
-  variable: "--font-farro-bold",
-  weight: "700",
-  display: "swap",
-});
-
-const interBold = localFont({
-  src: "/fonts/Inter-Bold.woff",
-  variable: "--font-inter-bold",
-  weight: "700",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "learing test",
@@ -29,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-lime text-white text-2xl p-10 bg-red-100 text-xl antialiased">
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,27 +1,17 @@
-// const withPWA = require('next-pwa')({
-//     dest: 'public',
-//     register: true,
-//     skipWaiting: true,
-//   });
-  
-//   /** @type {import('next').NextConfig} */
-//   const nextConfig = withPWA({
-//     // other next config if needed
-//   });
-  
-//   module.exports = nextConfig;
+// next.config.js
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
+});
 
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    appDir: true, // optional, but helps clarity
+  },
+};
 
-const withPWA = require("next-pwa")({
-    dest: "public",
-    disable: process.env.NODE_ENV === "development", // ✅ this prevents GenerateSW in dev
-    register: true,
-  });
-  
-  const nextConfig = {
-    reactStrictMode: true,
-    swcMinify: true,
-  };
-  
-  module.exports = withPWA(nextConfig);
-  
+module.exports = withPWA(nextConfig);
