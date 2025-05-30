@@ -83,7 +83,7 @@
     --foreground: #ededed;
   }
   .icon{
-    filter: invert(1);
+ filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(2753%) hue-rotate(331deg) brightness(118%) contrast(100%);
   }
 }
 @supports (-webkit-touch-callout: none) {
@@ -126,12 +126,6 @@ img, picture, video, canvas, svg {
 input, button, textarea, select {
   font: inherit;
 }
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -156,6 +150,7 @@ h6,
 .h6 {
   @apply font-farro font-bold;
   letter-spacing: -0.02rem;
+  
 }
 
 .h1-xl {
@@ -218,3 +213,31 @@ p,
 }
 
 /* typograpy */
+/* Button  */
+@layer components {
+  .btn {
+    @apply font-semibold text-para rounded-[8px] px-[16px] py-[8px] cursor-pointer transition-all duration-300 ease-in-out
+  }
+.btn-primary {
+ @apply bg-emerald text-white hover:bg-emerald-700
+}
+.btn-secondary {
+      @apply bg-coolgray text-white hover:bg-gray-700;
+}
+.btn-outline {
+     @apply border border-emerald text-emerald bg-transparent hover:bg-emerald hover:text-white;
+}
+.btn-outline-dark {
+       @apply border border-forest text-forest bg-transparent hover:bg-forest hover:text-white;
+}
+.btn-success {
+   @apply bg-springgreen text-white hover:bg-green-600;
+}
+.btn-blue {
+  @apply bg-skyblue text-white hover:bg-sky-600;
+}
+.btn-danger {
+ @apply bg-redrose text-white hover:bg-red-600;
+}
+}
+/* Button  */

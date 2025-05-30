@@ -7,7 +7,7 @@ import Tabs from "@/components/user/tabs";
 const page = () => {
   return (
     <div className="max-w-container mx-auto">
-      <div className="flex flex-col py-[20px] gap-[16px] pb-[71px]">
+      <div className="flex flex-col pt-[20px] gap-[16px] pb-[90px]">
         <ProfileDashboard />
         <NoticeBoard />
         <ServiceListout />

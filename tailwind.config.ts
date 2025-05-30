@@ -42,8 +42,8 @@ const config: Config = {
         'xs-small': ['0.625rem', '1rem'],       // 10px / 16px
   },
   fontFamily: {
-    inter: ['var(--font-inter-bold)', 'sans-serif'],
-    farro: ['var(--font-farro-bold)', 'sans-serif'],
+     farro: ['Farro', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
   },
       colors: {
         emerald: '#10B981',

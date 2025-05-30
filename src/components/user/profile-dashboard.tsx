@@ -19,7 +19,7 @@ const ProfileDashboard = () => {
         </div>
       </div>
       <span className="flex items-center justify-center relative">
-        <span className="absolute mr-[-15px] mt-[20px] w-[10px] h-[10px] bg-redrose rounded-[20px]"></span>
+        <span className="z-[1] absolute mr-[-15px] mt-[-15px] w-[10px] h-[10px] bg-redrose rounded-[20px]"></span>
         <Image
           className="icon"
           src="/icons/alert.svg"

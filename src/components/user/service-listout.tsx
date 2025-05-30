@@ -53,8 +53,8 @@ const ServiceListout = () => {
       href={items.url}
       className="bg-mint cursor-pointer border border-b-gray-400 text-black flex flex-col justify-between p-[12px] rounded-[8px]"
     >
-      <div key={items.id} className="">
-        <div className="h3">{items.title}</div>
+      <div key={items.id} className="flex flex-col">
+        <div className="h4">{items.title}</div>
         <p className="x-small">{items.describe}</p>
       </div>
       <span className="flex justify-end">
@@ -64,7 +64,7 @@ const ServiceListout = () => {
   ));
   return (
     <div className="flex flex-col gap-[8px] px-[16px] md:px-20px">
-      <div className="h2">Community</div>
+      <div className="h4">Community</div>
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[12px]">
         {communityCard}
       </div>
