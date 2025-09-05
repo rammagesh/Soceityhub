@@ -1,20 +1,42 @@
 {
-  "name": "SocietyHub App",
+  "name": "SocietyHub - Smart Society Management",
   "short_name": "SocietyHub",
+  "description": "Connect with neighbors, manage visitors, track deliveries, and stay updated with society announcements",
   "start_url": "/user",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
-  "theme_color": "#0f172a",
+  "theme_color": "#10B981",
+  "categories": ["lifestyle", "utilities", "social"],
+  "scope": "/",
   "icons": [
     {
       "src": "/logo/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/logo/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "User Dashboard",
+      "short_name": "Dashboard",
+      "description": "Access your personal dashboard",
+      "url": "/user",
+      "icons": [{ "src": "/icons/home.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Admin Panel",
+      "short_name": "Admin",
+      "description": "Access admin management panel",
+      "url": "/admin",
+      "icons": [{ "src": "/icons/setting.svg", "sizes": "96x96" }]
     }
   ]
 }

@@ -1,22 +1,16 @@
 import PagetopHeader from "@/components/user/pagetop-header";
 import Tabs from "@/components/user/tabs";
-import Image from "next/image";
-import Link from "next/link";
+import ChatService from "@/components/user/ChatService";
 import React from "react";
 
-const page = () => {
+const ChatsPage = () => {
   return (
-    <div className="w-full relative pt-[80px] pb-[71px]">
+    <div className="w-full relative pt-[80px] pb-[71px] bg-gradient-to-br from-emerald/5 to-forest/5 min-h-screen">
       <PagetopHeader title="Chats" url="/user" />
-      {/* page body  */}
-      <div className="px-[16px] md:px-[20px] py-[20px] flex flex-col">
-        <div className="h4">Welcome to Chats pages</div>
-      </div>
-
-      {/* page body END */}
+      <ChatService />
       <Tabs />
     </div>
   );
 };
 
-export default page;
+export default ChatsPage;

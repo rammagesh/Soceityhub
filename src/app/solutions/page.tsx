@@ -1,7 +1,5 @@
-import React from "react";
+import SolutionsPage from "@/pages/solutions/SolutionsPage";
 
-const page = () => {
-  return <div className="flex">test</div>;
-};
-
-export default page;
+export default function Solutions() {
+  return <SolutionsPage />;
+}

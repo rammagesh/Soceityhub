@@ -20,6 +20,12 @@ export async function middleware(req: NextRequest) {
 
   const role = profile.role
 
+  // Validate role to prevent XSS
+  const allowedRoles = ['admin', 'super_admin', 'user']
+  if (!allowedRoles.includes(role)) {
+    return NextResponse.redirect(new URL('/login', req.url))
+  }
+
   if (req.nextUrl.pathname === '/') {
     if (role === 'admin') return NextResponse.redirect(new URL('/admin/dashboard', req.url))
     if (role === 'super_admin') return NextResponse.redirect(new URL('/super-admin', req.url))

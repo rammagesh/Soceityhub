@@ -4,17 +4,19 @@ import ServiceListout from "@/components/user/service-listout";
 import NoticeBoard from "@/components/user/notice-board";
 import Tabs from "@/components/user/tabs";
 
-const page = () => {
+const UserPage = () => {
   return (
-    <div className="max-w-container mx-auto">
-      <div className="flex flex-col pt-[20px] gap-[16px] pb-[90px]">
-        <ProfileDashboard />
-        <NoticeBoard />
-        <ServiceListout />
+    <main className="min-h-screen bg-gradient-to-br from-emerald/5 to-forest/5">
+      <div className="max-w-container mx-auto">
+        <div className="flex flex-col pt-[20px] gap-[16px] pb-[90px]">
+          <ProfileDashboard />
+          <NoticeBoard />
+          <ServiceListout />
+        </div>
+        <Tabs />
       </div>
-      <Tabs />
-    </div>
+    </main>
   );
 };
 
-export default page;
+export default UserPage;

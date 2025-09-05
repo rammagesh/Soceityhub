@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -57,6 +58,7 @@ const config: Config = {
         springgreen: '#22C55E',
         skyblue: '#0EA5E9',
         amber: '#F59E0B',
+        darktext: '#ededed',
       },
     },
   },

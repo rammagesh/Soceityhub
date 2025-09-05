@@ -1,7 +1,5 @@
-import React from "react";
+import PricingPage from "@/pages/pricing/PricingPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default function Pricing() {
+  return <PricingPage />;
+}

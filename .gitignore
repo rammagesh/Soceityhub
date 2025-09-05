@@ -1,39 +1,36 @@
-# Node modules
-node_modules/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Output logs
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build output
-.next/
-out/
-dist/
+# local env files
+.env*.local
+.env
 
-# Production
-.env.local
-.env.*.local
+# vercel
+.vercel
 
-# Firebase (if using emulators or Firebase CLI config)
-firebase-debug.log
-.firebaserc
-
-# OS/System files
-.DS_Store
-Thumbs.db
-
-# IDEs and editors
-.vscode/
-.idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-
-# Test coverage
-coverage/
-
-# PWA cache
-public/sw.js
-public/workbox-*.js
+# typescript
+*.tsbuildinfo
+next-env.d.ts

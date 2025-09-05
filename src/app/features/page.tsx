@@ -1,7 +1,5 @@
-import React from "react";
+import FeaturesPage from "@/pages/features/FeaturesPage";
 
-const page = () => {
-  return <div>page</div>;
-};
-
-export default page;
+export default function Features() {
+  return <FeaturesPage />;
+}

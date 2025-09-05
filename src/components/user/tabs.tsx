@@ -1,27 +1,32 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Tabs = () => {
+  const { t } = useLanguage();
+  
   const tabsDetails = [
-    { id: 1, title: "Home", icon: "/icons/home-outline.svg", url: "/user" },
+    { id: 1, title: t('home'), icon: "/icons/home-outline.svg", url: "/user" },
     {
       id: 2,
-      title: "Chats",
+      title: t('chats'),
       icon: "/icons/chat-outline.svg",
       url: "/user/chats",
     },
     {
       id: 3,
-      title: "Service",
-      icon: "/icons/setting-outline.svg",
-      url: "/user/settings",
+      title: t('service'),
+      icon: "/icons/office-building.svg",
+      url: "/user/services",
     },
     {
       id: 4,
-      title: "Profile",
-      icon: "/icons/office-building.svg",
-      url: "/user/profile",
+      title: t('settings'),
+      icon: "/icons/setting-outline.svg",
+      url: "/user/settings",
     },
   ];
   const tabslist = tabsDetails.map((items) => (
