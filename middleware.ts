@@ -1,36 +1,27 @@
-// middleware.ts
 import { NextResponse } from 'next/server'
-import { createMiddlewareSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import type { NextRequest } from 'next/server'
 
-export async function middleware(req: NextRequest) {
-  const res = NextResponse.next()
-  const supabase = createMiddlewareSupabaseClient({ req, res })
-  const { data: { session } } = await supabase.auth.getSession()
-
-  if (!session) return NextResponse.redirect(new URL('/login', req.url))
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', session.user.id)
-    .single()
-
-  if (!profile) return NextResponse.redirect(new URL('/login', req.url))
-
-  const role = profile.role
-
-  // Validate role to prevent XSS
-  const allowedRoles = ['admin', 'super_admin', 'user']
-  if (!allowedRoles.includes(role)) {
-    return NextResponse.redirect(new URL('/login', req.url))
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+  
+  // Protected routes
+  const protectedRoutes = ['/user', '/admin', '/super-admin']
+  const isProtectedRoute = protectedRoutes.some(route => pathname.startsWith(route))
+  
+  // Check for auth token (simplified)
+  const token = request.cookies.get('auth-token')?.value
+  
+  if (isProtectedRoute && !token) {
+    return NextResponse.redirect(new URL('/auth', request.url))
   }
+  
+  return NextResponse.next()
+}
 
-  if (req.nextUrl.pathname === '/') {
-    if (role === 'admin') return NextResponse.redirect(new URL('/admin/dashboard', req.url))
-    if (role === 'super_admin') return NextResponse.redirect(new URL('/super-admin', req.url))
-    return NextResponse.redirect(new URL('/dashboard', req.url))
-  }
-
-  return res
+export const config = {
+  matcher: [
+    '/user/:path*',
+    '/admin/:path*', 
+    '/super-admin/:path*'
+  ],
 }
