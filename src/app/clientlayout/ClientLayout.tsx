@@ -13,7 +13,7 @@ export default function ClientLayout({
 }) {
   const pathname = usePathname();
   const hidePaths = ["/user", "/admin", "/auth", "super-admin" , "/demo"];
-  const shouldHide = hidePaths.some((path) => pathname.startsWith(path));
+  const shouldHide = pathname ? hidePaths.some((path) => pathname.startsWith(path)) : false;
 
   return (
     <ThemeProvider>
